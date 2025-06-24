@@ -4,7 +4,7 @@ interface ahb_intf(input Hclk);
   logic [31:0] Hwdata;
   logic [31:0] Haddr;
   logic [31:0] Hrdata;
-  logic Hresp,lock;
+  logic Hresp;
   logic Hreadyout;
   logic Hreadyin;
   logic Hsel;
