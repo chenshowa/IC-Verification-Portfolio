@@ -1,3 +1,9 @@
+//--------------------------------------------
+// This DUT features built-in memory storage and adheres to the APB3 protocol  
+// specification with one notable exception: the PSLVERR port is not supported
+// in this implementation.
+//--------------------------------------------
+
 interface dutintf;
   logic clk;
   logic rst_n;
@@ -7,6 +13,7 @@ interface dutintf;
   logic psel;
   logic [31:0] prdata;
   logic pready;
+  //logic pslverr; // not supported
   logic [31:0] pwdata;
 
   clocking drv_cb @(posedge clk);
@@ -38,7 +45,6 @@ interface dutintf;
   modport DRIVER (clocking drv_cb, input clk, output rst_n);
   modport MONITOR (clocking bus_cb, input clk);
 endinterface
-
 
 
 module apb_slave(dutintf dif);

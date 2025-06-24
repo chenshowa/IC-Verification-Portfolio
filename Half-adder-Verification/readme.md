@@ -1,16 +1,16 @@
 # UVM testbench for a 4-bit half adder
 ### Project : Half Adder Verification
 ### Overview
-This project implements a comprehensive UVM testbench for verifying a 4-bit synchronous adder module. The testbench provides structured verification with functional coverage and directed test sequences.
+This project implements a UVM testbench for verifying a 4-bit synchronous adder module. 
 
 - **Technologies**: SystemVerilog, UVM
 - **Status**: ✅ Complete with runnable testbench
-- **🔗 Live Demo**: [EDAPlayground - Half Adder](https://www.edaplayground.com/x/CP)
+- **🔗 Live Demo**: [EDAPlayground - Half Adder](https://www.edaplayground.com/x/CPq6)
 
 ### Testbench Components
-- Test Sequence (testcase.sv)
-- Coverage Model (coverage.sv)
-- Assertion (assertion.sv)
+- Test Sequence (`code/testcase.sv`)
+- Coverage Model (`code/coverage.sv`)
+- Assertion (`code/assertion.sv`)
 
 
-<img src="adder.png" alt="A floating image" style="float: right; margin-left: 15px;">
+<img src="testbench_adder.png" alt="A floating image" style="float: right; margin-left: 15px;">
