@@ -12,8 +12,14 @@ A UVM testbench for AHB-to-APB Bridge, which is AHB-lite Slave and APB Master. W
 ### Testbench Components
 - Assertion (`code/assertion.sv`)
 
-<img src="testbench_AHB2APB.png" alt="A floating image" style="float: right; margin-left: 15px;">
+<img src="image/testbench_AHB2APB.png" alt="A floating image" style="float: right; margin-left: 15px;">
 
+.
+
+
+### [Complete Testcase Plan(link)](https://github.com/chenshowa/IC-Verification-Portfolio/blob/main/AHB-to-APB-Bridge-Verification/testcase_plan.xlsx)
+
+<img src="image/testlist.PNG" alt="A floating image" style="float: right; margin-left: 15px;">
 
 .
 
@@ -26,4 +32,5 @@ A UVM testbench for AHB-to-APB Bridge, which is AHB-lite Slave and APB Master. W
 
 - This project does not support APB4 functionality.
 
-<img src="DUT_AHB2APB.png" alt="A floating image" style="float: right; margin-left: 15px;">
+<img src="image/DUT_AHB2APB.png" alt="A floating image" style="float: right; margin-left: 15px;">
+
