@@ -6,6 +6,7 @@ This project implements a UVM testbench for verifying a 4-bit synchronous adder 
 - **Technologies**: SystemVerilog, UVM
 - **Status**: ✅ Complete with runnable testbench
 - **🔗 Live Demo**: [EDAPlayground - Half Adder](https://www.edaplayground.com/x/CPq6)
+- **🔗 Testcase plan**: [Caselist table](https://github.com/chenshowa/IC-Verification-Portfolio/blob/main/Half-adder-Verification/testcase_plan.pdf)
 
 ### Testbench Components
 - Test Sequence (`code/testcase.sv`)

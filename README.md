@@ -2,6 +2,15 @@
 
 Welcome to my IP/SOC verification engineering portfolio! This repository contains three verification projects that demonstrate exercises in verification planning, SystemVerilog, and UVM testbench.
 
+## 📈 Project Status
+
+| Project | Testcase plan | Testbench | Coverage | EDA Link |
+|---------|-----------|----------|---------------|----------|
+| [Half Adder](https://github.com/chenshowa/IC-Verification-Portfolio/tree/main/Half-adder-Verification) | [✅ Ready (Link)](https://github.com/chenshowa/IC-Verification-Portfolio/blob/main/Half-adder-Verification/testcase_plan.pdf)| ✅ Complete | ✅ 91.6%  | [Run Now](https://www.edaplayground.com/x/CPq6) |
+| [APB Slave](https://github.com/chenshowa/IC-Verification-Portfolio/tree/main/APB-slave-Verification) | [✅ Ready (Link)](https://github.com/chenshowa/IC-Verification-Portfolio/blob/main/APB-slave-Verification/testcase_plan.pdf)| ✅ Complete | ✅ 95%+  | [Run Now](https://www.edaplayground.com/x/7_3E) |
+| [AHB-APB Bridge](https://github.com/chenshowa/IC-Verification-Portfolio/tree/main/AHB-to-APB-Bridge-Verification) | [✅ Ready (Link)](https://github.com/chenshowa/IC-Verification-Portfolio/blob/main/AHB-to-APB-Bridge-Verification/testcase_plan.xlsx)| 🚧 In Progress | 🚧 TBD  |  |
+
+
 ## 📁 Project Overview
 
 This portfolio includes the following verification projects:
@@ -25,14 +34,6 @@ This portfolio includes the following verification projects:
 - **Description**: Verification environment for AHB-to-APB bridge protocol converter
 - **Technologies**: SystemVerilog, UVM, AMBA AHB-lite/APB3 Protocols
 - **Status**: 🚧 In Development (Test case list ready)
-
-## 📈 Project Status
-
-| Project | Testcase plan | Testbench | Coverage | EDA Link |
-|---------|-----------|----------|---------------|----------|
-| Half Adder | ✅ Ready| ✅ Complete | ✅ 91.6%  | [Run Now](https://www.edaplayground.com/x/CPq6) |
-| APB Slave | ✅ Ready| ✅ Complete | ✅ 95%+  | [Run Now](https://www.edaplayground.com/x/7_3E) |
-| AHB-APB Bridge | ✅ Ready| 🚧 In Progress | 🚧 TBD  |  |
 
 
 ## 🛠️ Technologies & Methodologies
