@@ -81,7 +81,7 @@ endclass
 
 function void my_case1::build_phase(uvm_phase phase);
    super.build_phase(phase);
-  `uvm_info("my_case1", "jump nto my_case1", UVM_LOW);
+  `uvm_info("my_case1", "jump to my_case1", UVM_LOW);
 
    uvm_config_db#(uvm_object_wrapper)::set(this, 
                               "env.i_agt.sqr.main_phase",
