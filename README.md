@@ -8,7 +8,7 @@ Welcome to my IP/SOC verification engineering portfolio! This repository contain
 |---------|-----------|----------|---------------|----------|
 | [Half Adder](https://github.com/chenshowa/IC-Verification-Portfolio/tree/main/Half-adder-Verification) | [✅ Ready (Link)](https://github.com/chenshowa/IC-Verification-Portfolio/blob/main/Half-adder-Verification/testcase_plan.pdf)| ✅ Complete | ✅ 91.6%  | [Run Now](https://www.edaplayground.com/x/CPq6) |
 | [APB Slave](https://github.com/chenshowa/IC-Verification-Portfolio/tree/main/APB-slave-Verification) | [✅ Ready (Link)](https://github.com/chenshowa/IC-Verification-Portfolio/blob/main/APB-slave-Verification/testcase_plan.pdf)| ✅ Complete | ✅ 95%+  | [Run Now](https://www.edaplayground.com/x/7_3E) |
-| [AHB-APB Bridge](https://github.com/chenshowa/IC-Verification-Portfolio/tree/main/AHB-to-APB-Bridge-Verification) | [✅ Ready (Link)](https://github.com/chenshowa/IC-Verification-Portfolio/blob/main/AHB-to-APB-Bridge-Verification/testcase_plan.xlsx)| ✅ Beta | 🚧 TBD  | [Run Now](https://www.edaplayground.com/x/SeE7) |
+| [AHB-APB Bridge](https://github.com/chenshowa/IC-Verification-Portfolio/tree/main/AHB-to-APB-sync-down-Bridge-Verification) | [✅ Ready (Link)](https://github.com/chenshowa/IC-Verification-Portfolio/blob/main/AHB-to-APB-sync-down-Bridge-Verification/testcase_plan.xlsx)| ✅ Beta | 🚧 TBD  | [Run Now](https://www.edaplayground.com/x/SeE7) |
 
 
 ## 📁 Project Overview
@@ -30,7 +30,7 @@ This portfolio includes the following verification projects:
 - **🔗 Live Demo**: [EDAPlayground - APB Slave](https://www.edaplayground.com/x/7_3E)
 
 ### 3. AHB-to-APB sync-down BridgeVerification
-- **Folder**: [`AHB-to-APB-Bridge-Verification/`](https://github.com/chenshowa/IC-Verification-Portfolio/tree/main/AHB-to-APB-Bridge-Verification)
+- **Folder**: [`AHB-to-APB-sync-down-Bridge-Verification/`](https://github.com/chenshowa/IC-Verification-Portfolio/tree/main/AHB-to-APB-sync-down-Bridge-Verification)
 - **Description**: Verification environment for AHB-to-APB sync-down bridge protocol converter
 - **Technologies**: SystemVerilog, UVM, AMBA AHB-lite/APB3 Protocols
 - **Status**: ✅  [EDAPlayground - AHB-to-APB Bridge (Beta)](https://www.edaplayground.com/x/7_3E)(Test case list ready)
