@@ -43,7 +43,7 @@ endfunction
     
 function void scoreboard::compare(ahb_trans exp, apb_trans rcvd);
     
-  fcov.cg.sample(exp);
+  fcov.cg.sample(exp, rcvd);
   
     if (exp == null) begin
         `uvm_error("SCOREBOARD", "Expected AHB transaction is null")
@@ -78,15 +78,16 @@ endfunction
               
 function void scoreboard::report_phase(uvm_phase phase );
   integer i=0;
-  while(i<`burst_size)
+  while(i<`burst_size*2)
     begin
       compare (ahb_tx_q[i], apb_tx_q[i]);
       i++;
     end
   
-  `uvm_info("func_cov", $sformatf(" Coverage = %0g", fcov.cg.get_inst_coverage()),UVM_MEDIUM)
-  `uvm_info("func_cov", $sformatf(" Coverage haddr = %0g", fcov.cg.haddr.get_inst_coverage()),UVM_LOW)
-  `uvm_info("func_cov", $sformatf(" Coverage hwrite = %0g", fcov.cg.hwrite.get_inst_coverage()),UVM_LOW)
-  `uvm_info("func_cov", $sformatf(" Coverage hsize = %0g", fcov.cg.hsize.get_inst_coverage()),UVM_LOW)
+    `uvm_info("func_cov", $sformatf(" Coverage = %0g", fcov.cg.get_inst_coverage()),UVM_MEDIUM)
+    `uvm_info("func_cov", $sformatf(" Coverage haddr = %0g", fcov.cg.haddr.get_inst_coverage()),UVM_LOW)
+    `uvm_info("func_cov", $sformatf(" Coverage hwdata = %0g", fcov.cg.hwdata.get_inst_coverage()),UVM_LOW)
+    `uvm_info("func_cov", $sformatf(" Coverage Prdata = %0g", fcov.cg.prdata.get_inst_coverage()),UVM_LOW)
+    `uvm_info("func_cov", $sformatf(" Coverage hwrite = %0g", fcov.cg.hwrite.get_inst_coverage()),UVM_LOW)
    
 endfunction

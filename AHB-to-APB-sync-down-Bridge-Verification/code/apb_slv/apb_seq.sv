@@ -15,13 +15,13 @@ endclass
       endfunction
     
     task apb_seq::body();
-      int i=0;
-      repeat (`burst_size) begin
+
+      repeat (`burst_size*2) begin
         tx=apb_trans::type_id::create("tx");
         start_item(tx);
         assert(tx.randomize());
         finish_item(tx);
-        i++;
+
       end
       #100;
     endtask

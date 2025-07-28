@@ -10,7 +10,6 @@ interface ahb_intf(input Hclk, input Hresetn);
   logic [1:0] Htrans;
   logic [2:0] Hsize;
   logic [3:0] Hprot;
-  logic [2:0] Hburst;
   logic [3:0] Hflag;
   
   clocking mon_cb @(posedge Hclk);

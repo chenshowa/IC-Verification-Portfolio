@@ -98,7 +98,7 @@ module assertion_bridge(
   apb_intf apb_intf
 );
 
-  // . AHB選中時APB必須啟動
+  // AHB端觸發時APB必須啟動
   property ahb_sel_apb_start;
       @(posedge ahb_intf.Hclk) disable iff (!ahb_intf.Hresetn)
       (ahb_intf.Hsel && ahb_intf.Htrans != 2'b00 && ahb_intf.Hreadyin) |-> 
@@ -107,10 +107,10 @@ module assertion_bridge(
   assert property (ahb_sel_apb_start) else $error("APB not selected after AHB valid transfer");
 
 
-  // . APB完成後AHB立即Ready
+  // APB完成(Pready)，AHB立即Ready
   property apb_complete_ahb_ready;
     @(posedge ahb_intf.Hclk) disable iff (!ahb_intf.Hresetn)
-    ($fell(apb_intf.Psel) && apb_intf.Penable && apb_intf.Pready) |-> 
+    ($fell(apb_intf.Psel) && $fell(apb_intf.Penable) && apb_intf.Pready) |-> 
     ##[0:1] ahb_intf.Hreadyout;		
   endproperty
   assert property (apb_complete_ahb_ready) else $error("AHB not ready immediately after APB completion");

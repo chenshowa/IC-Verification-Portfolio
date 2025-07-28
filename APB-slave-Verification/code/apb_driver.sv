@@ -48,8 +48,7 @@ class apb_driver extends uvm_driver#(apb_transaction);
          wait(`DRIV_if.pready == 1);
 
          req.prdata = `DRIV_if.prdata;
-//        `uvm_info("apb_driver",$sformatf("req.prdata=%x at time %t", req.prdata, $time), UVM_LOW)
-         
+  
        end
 
       seq_item_port.item_done();

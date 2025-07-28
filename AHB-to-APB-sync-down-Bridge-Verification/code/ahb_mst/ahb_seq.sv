@@ -1,3 +1,4 @@
+   
 // Base sequence class
 class ahb_mst_basic_seq extends uvm_sequence#(ahb_trans);
   `uvm_object_utils(ahb_mst_basic_seq)
@@ -15,6 +16,7 @@ class ahb_mst_basic_seq extends uvm_sequence#(ahb_trans);
   endfunction
 
   task body();
+    
     foreach(test_vectors[i]) begin
       tx = ahb_trans::type_id::create($sformatf("tx_%0d", i));
       start_item(tx);
@@ -36,11 +38,15 @@ class ahb_mst_burst extends ahb_mst_basic_seq;
   function new(string name="ahb_mst_burst");
     super.new(name);  
     // Burst transfer pattern
+
+    // write burst
     for (int i = 0; i < `burst_size; i++) begin
-      if (i < `burst_size/2) // write burst
-        test_vectors.push_back('{1'b1, 32'h00000008 + (i*8), 32'h00000008 + (i*8)});
-      else // Read burst
-        test_vectors.push_back('{1'b0, 32'h00000000 + `burst_size*4 - ((i-`burst_size/2) * 8), 32'h00000000});
+      test_vectors.push_back('{1'b1, 32'h00000008 + (i*8), 32'h00000008 + (i*8)});
+    end
+
+    // Read burst 
+    for (int i = 0; i < `burst_size; i++) begin
+      test_vectors.push_back('{1'b0, 32'h00000008 + (i*8), 32'h00000008 + (i*8)});
     end
   endfunction
 endclass
@@ -54,7 +60,7 @@ class ahb_mst_back2back extends ahb_mst_basic_seq;
   function new(string name="ahb_mst_back2back");
     super.new(name);
     // Back-to-back transfer pattern
-    for (int i = 0; i < `burst_size/2; i++) begin
+    for (int i = 0; i < `burst_size; i++) begin
       // Write operation
       test_vectors.push_back('{1'b1, 32'h00000008 + (i*8), 32'h00000008 + (i*8)});
       // read operation to same address
@@ -63,3 +69,24 @@ class ahb_mst_back2back extends ahb_mst_basic_seq;
   endfunction
 
 endclass
+
+
+class ahb_random_seq extends uvm_sequence#(ahb_trans);
+  `uvm_object_utils(ahb_random_seq)
+  ahb_trans tx;
+  extern function new(string name="ahb_seq");
+  extern task body();
+endclass
+    
+  function ahb_random_seq::new(string name="ahb_seq");
+    super.new(name);
+  endfunction
+
+  task ahb_random_seq::body();
+    repeat (`burst_size*2) begin
+      tx=ahb_trans::type_id::create("tx");
+      start_item(tx);
+      assert(tx.randomize() with {tx.Haddr%16==0;});
+      finish_item(tx);
+    end
+  endtask
